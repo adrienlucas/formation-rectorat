@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{#{% block title "Ajout d'article - " ~ parent() %}#}
+{% block title %}Ajout d'article - {{ parent() }}{% endblock %}
+
+{% block body %}
+    {{ form_start(add_article_form) }}
+
+        {{ form_row(add_article_form.title) }}
+        {{ form_row(add_article_form.content) }}
+        <input type="submit" />
+
+    {{ form_end(add_article_form) }}
+{% endblock %}
