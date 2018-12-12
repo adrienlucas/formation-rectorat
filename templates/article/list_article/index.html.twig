@@ -4,7 +4,7 @@
 
 {% block body %}
     {% for article in articles %}
-        {% set article_url = path('article_detail_article', {'title': article.title}) %}
+        {% set article_url = path('article_detail_article', {'id': article.id}) %}
         <h2>
             <a href="{{ article_url }}">
                 {{ article.title }}
@@ -13,6 +13,7 @@
         <p>
             {{ article.content|slice(0, 120) }}
             <a href="{{ article_url }}">[...]</a>
+            <a href="{{ path('article_edit', {'id': article.id}) }}">&#9785;</a>
         </p>
         <hr />
     {% endfor %}
