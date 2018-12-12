@@ -25,7 +25,7 @@ class AffichageArticleController extends AbstractController
     }
 
     /**
-     * @Route("/article/{id}", name="article_detail_article")
+     * @Route("/article/{title}", name="article_detail_article")
      */
     public function detail(Article $article)
     {

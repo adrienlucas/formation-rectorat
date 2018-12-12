@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edition de l'article #{{ article.id }} - {{ parent() }}{% endblock %}
+
+{% block body %}
+    {{ form_start(edit_article_form) }}
+
+        {{ form_row(edit_article_form.title) }}
+        {{ form_row(edit_article_form.content) }}
+        <input type="submit" />
+
+    {{ form_end(edit_article_form) }}
+{% endblock %}

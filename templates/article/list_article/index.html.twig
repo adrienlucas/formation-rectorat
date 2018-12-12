@@ -4,7 +4,7 @@
 
 {% block body %}
     {% for article in articles %}
-        {% set article_url = path('article_detail_article', {'id': article.id}) %}
+        {% set article_url = path('article_detail_article', {'title': article.title}) %}
         <h2>
             <a href="{{ article_url }}">
                 {{ article.title }}
