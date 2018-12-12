@@ -4,8 +4,16 @@
 
 {% block body %}
     {% for article in articles %}
-        <h2>{{ article.title }}</h2>
-        <p>{{ article.content|slice(0, 120) }}[...]</p>
+        {% set article_url = path('article_detail_article', {'id': article.id}) %}
+        <h2>
+            <a href="{{ article_url }}">
+                {{ article.title }}
+            </a>
+        </h2>
+        <p>
+            {{ article.content|slice(0, 120) }}
+            <a href="{{ article_url }}">[...]</a>
+        </p>
         <hr />
     {% endfor %}
 {% endblock %}
